@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import animations from '@midudev/tailwind-animations';
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,12 +9,31 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        ui: {
+          green:"#2DCAB1",
+          gray: "#7D879C",
+          lightblack:"#2b3445",
+          black:"#000",
+          white:"#fff",
+        },
+        chips: {
+          greeny:"#1cb59c",
+          lightgreen:"#d3fff5",
+          yellow:"#ffb800",
+          lightyellow:"#fff8e5",
+          red:"#f56565",
+          pink:"#ffdfdf",
+        }
+      },  
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        customGradient: "linear-gradient(90deg, #0d5287 0%, #1870ca 21%, #05aace 42%, #04d2c6 63%, #26e4c7 79%);",
+      },
+      fontFamily: {
+        'sans': ['"Open Sans"'],
       },
     },
   },
-  plugins: [],
+  plugins: [animations],
+
 };
